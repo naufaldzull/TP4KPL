@@ -14,3 +14,30 @@ else
 {
     Console.WriteLine($"Kode Pos {inputkelurahan} : tidak ditemukan");
 }
+
+Console.WriteLine("\n");
+
+DoorMachine pintu = new DoorMachine();
+
+while (true)
+{
+    Console.Write("Masukkan perintah (buka/kunci/keluar): ");
+    string perintah = Console.ReadLine().ToLower();
+
+    if (perintah == "buka")
+    {
+        pintu.BukaPintu();
+    }
+    else if (perintah == "kunci")
+    {
+        pintu.KunciPintu();
+    }
+    else if (perintah == "keluar")
+    {
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Perintah tidak dikenal. Gunakan 'buka', 'kunci', atau 'keluar'");
+    }
+}
